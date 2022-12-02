@@ -13,7 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('pembayaran', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->string('total_pembayaran');
+            $table->string('status_pembayan');
+            $table->string('kode_pembayan');
+        });
     }
 
     /**
