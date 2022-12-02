@@ -41,7 +41,7 @@ use App\Transformers\BaseTransformer;
  *     }
  * )
  */
-class UserTransformer extends BaseTransformer
+class FasilitasTransformer extends BaseTransformer
 {
     protected array $availableIncludes = [
         'roles',
@@ -51,11 +51,11 @@ class UserTransformer extends BaseTransformer
     /**
      * A Fractal transformer.
      *
-     * @param  \App\Models\Auth\User\User  $user
+     * @param  \App\Models\Auth\User\Fasilitas  $user
      *
      * @return array
      */
-    public function transform(User $user)
+    public function transform(Fasilitas $fasilitas)
     {
         $response = [
             'id' => self::forId($user),

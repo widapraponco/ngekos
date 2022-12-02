@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nama_fasilitas');
             $table->string('deskripsi');
-            $table->string('harga');
+            $table->integer('harga');
         });
     }
 
