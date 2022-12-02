@@ -14,7 +14,13 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('fasilitas', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->string('nama_fasilitas');
+            $table->string('deskripsi');
+            $table->string('harga');
+        });
     }
 
     /**
@@ -24,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('fasilitas');
     }
 };
