@@ -36,5 +36,3 @@ class FasilitasTransformer extends TransformerAbstract
         ];
     }
 }
-
-
