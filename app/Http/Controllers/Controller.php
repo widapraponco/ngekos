@@ -99,6 +99,7 @@ class Controller extends BaseController
      *                         "expires_in" : 3600,
      *                         "access_token" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJ...",
      *                         "refresh_token" : "def50200b10ed22a1dab8bb0d18..."
+     * 
      *                     }
      *                 )
      *             )
@@ -139,6 +140,7 @@ class Controller extends BaseController
      *
      * @return \Spatie\Fractal\Fractal
      */
+    
     protected function fractal($data, BaseTransformer $transformer)
     {
         return fractal($data, $transformer, JsonApiSerializer::class)
