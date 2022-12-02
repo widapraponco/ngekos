@@ -8,7 +8,7 @@ declare(strict_types=1);
  * Time: 3:31 PM
  */
 
-namespace App\Transformers\Auth;
+namespace App\Transformers;
 
 use App\Models\Fasilitas;
 use App\Transformers\BaseTransformer;
@@ -51,17 +51,17 @@ class FasilitasTransformer extends BaseTransformer
     /**
      * A Fractal transformer.
      *
-     * @param  \App\Models\Auth\User\Fasilitas  $user
+     * @param  \App\Models\Auth\User\Fasilitas  $table
      *
      * @return array
      */
-    public function transform(Fasilitas $fasilitas)
+    public function transform(Fasilitas $table)
     {
         $response = [
-            'id' => self::forId($user),
-            'nama_fasilitas' => $user->nama_fasilitas,
-            'deskripsi' => $user->deskripsi,
-            'harga' => $user->harga,
+            // 'id' => self::forId($table),
+            'nama_fasilitas' => $table->nama_fasilitas,
+            'deskripsi' => $table->deskripsi,
+            'harga' => $table->harga,
         ];
 
         $response = $this->filterData(
@@ -71,18 +71,18 @@ class FasilitasTransformer extends BaseTransformer
             ]
         );
 
-        return $this->addTimesHumanReadable($user, $response);
+        // return $this->addTimesHumanReadable($table, $response);
     }
 
-    public function includeRoles(User $user)
-    {
-        return $this->collection($user->roles, new RoleTransformer());
-    }
+    // public function includeRoles(Fasilitas $table)
+    // {
+    //     return $this->collection($table->roles, new RoleTransformer());
+    // }
 
-    public function includePermissions(User $user)
-    {
-        return $this->collection($user->permissions, new PermissionTransformer());
-    }
+    // public function includePermissions(Fasilitas $table)
+    // {
+    //     return $this->collection($table->permissions, new PermissionTransformer());
+    // }
 
     /** @return string */
     public function getResourceKey(): string
