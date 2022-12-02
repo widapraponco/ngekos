@@ -82,7 +82,7 @@ class Controller extends BaseController
      *                         property="expires_in",
      *                         type="integer",
      *                         description="Token expiration in miliseconds",
-     *                         @OA\Items
+     *                         
      *                     ),
      *                     @OA\Property(
      *                         property="access_token",
@@ -140,7 +140,7 @@ class Controller extends BaseController
      *
      * @return \Spatie\Fractal\Fractal
      */
-    
+
     protected function fractal($data, BaseTransformer $transformer)
     {
         return fractal($data, $transformer, JsonApiSerializer::class)
