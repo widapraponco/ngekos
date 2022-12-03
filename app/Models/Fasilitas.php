@@ -22,6 +22,7 @@ class Fasilitas extends Model
         'harga',
 
     ];
+    
 
     // public function periode()
     // {
