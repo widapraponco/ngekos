@@ -35,5 +35,9 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('fasilitas');
+
+        $this->revokePermissionToSystem(Fasilitas::PERMISSIONS);
+        $this->revokePermissionToAdmin(Fasilitas::PERMISSIONS);
+        $this->deletePermission(Fasilitas::PERMISSIONS);
     }
 };
