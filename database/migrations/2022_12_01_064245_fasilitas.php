@@ -16,11 +16,15 @@ return new class extends Migration
     {
         Schema::create('fasilitas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('nama_fasilitas');
             $table->string('deskripsi');
             $table->integer('harga');
+            $table->timestamps();
         });
+
+        $this->createPermission(Fasilitas::PERMISSIONS);
+        $this->assignPermissionToSystem(Fasilitas::PERMISSIONS);
+        $this->assignPermissionToAdmin(Fasilitas::PERMISSIONS);
     }
 
     /**
@@ -31,5 +35,9 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('fasilitas');
+
+        $this->revokePermissionToSystem(Fasilitas::PERMISSIONS);
+        $this->revokePermissionToAdmin(Fasilitas::PERMISSIONS);
+        $this->deletePermission(Fasilitas::PERMISSIONS);
     }
 };
