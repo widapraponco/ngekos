@@ -137,7 +137,7 @@ class FasilitasController extends Controller
 
         $user->update($attributes);
 
-        return $this->fractal($user->refresh(), new UserTransformer());
+        return $this->fractal($user->refresh(), new FasilitasTransformer());
     }
 
     /**
