@@ -87,6 +87,6 @@ class FasilitasTransformer extends BaseTransformer
     /** @return string */
     public function getResourceKey(): string
     {
-        return 'users';
+        return 'Fasilitas';
     }
 }
