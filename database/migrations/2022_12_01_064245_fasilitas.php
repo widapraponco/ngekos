@@ -21,6 +21,10 @@ return new class extends Migration
             $table->integer('harga');
             $table->timestamps();
         });
+
+        $this->createPermission(Fasilitas::PERMISSIONS);
+        $this->assignPermissionToSystem(Fasilitas::PERMISSIONS);
+        $this->assignPermissionToAdmin(Fasilitas::PERMISSIONS);
     }
 
     /**
