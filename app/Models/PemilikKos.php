@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PemilikKos extends Model
+class PemilikKosModel extends Model
 {
     //
 }
