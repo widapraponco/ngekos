@@ -13,5 +13,6 @@ class kos extends Model
         'create'        => 'kos create',
         'read'          => 'kos read',
         'update'        => 'kos update',
+        'delete'        => 'kos delete',
     ];
 }
