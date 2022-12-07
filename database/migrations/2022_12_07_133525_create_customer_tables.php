@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('customer_tables', function (Blueprint $table) {
             $table->increments('id_cs');
-            $table->varchar('nama_cs');
+            $table->varchar('nama_cs', 20);
+            $table->varchar('email_cs', 20);
             $table->timestamps();
         });
     }
