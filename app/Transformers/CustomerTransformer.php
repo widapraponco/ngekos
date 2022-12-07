@@ -14,7 +14,13 @@ class CustomerTransformer extends TransformerAbstract
     public function transform(Customer $customer)
     {
         $response = [
+            //
         ];
         return $response;
+    }
+
+    public function getResourceKey(): string
+    {
+        return 'customer';
     }
 }
