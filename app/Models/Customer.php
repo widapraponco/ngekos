@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
-    //
+    public const PERMISSIONS = [
+        'create'        => 'customer create',
+    ];
 }
