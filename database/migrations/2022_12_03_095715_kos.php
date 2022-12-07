@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('kos', function (Blueprint $table) {
             $table->id();
             $table->variable_characters('nama_kos');
+            $table->variable_characters('desk_kos');
         });
     }
 
