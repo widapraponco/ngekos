@@ -20,6 +20,7 @@ return new class extends Migration
             $table->variable_characters('tarif');
             $table->integer('jml_kamar');
             $table->integer('stok_kamar');
+            $table->variable_characters('alamat_kos');
         });
     }
 
