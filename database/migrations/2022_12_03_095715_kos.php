@@ -24,6 +24,7 @@ return new class extends Migration
             $table->image('gambar1');
             $table->image('gambar2');
             $table->image('gambar3');
+            $table->image('gambar4');
         });
     }
 
