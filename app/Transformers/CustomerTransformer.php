@@ -2,37 +2,17 @@
 
 namespace App\Transformers;
 
+use App\Models\Customer;
 use League\Fractal\TransformerAbstract;
 
 class CustomerTransformer extends TransformerAbstract
 {
-    /**
-     * List of resources to automatically include
-     *
-     * @var array
-     */
-    protected array $defaultIncludes = [
-        //
-    ];
+
+    protected array $defaultIncludes = [];
+    protected array $availableIncludes = [];
     
-    /**
-     * List of resources possible to include
-     *
-     * @var array
-     */
-    protected array $availableIncludes = [
-        //
-    ];
-    
-    /**
-     * A Fractal transformer.
-     *
-     * @return array
-     */
-    public function transform()
+    public function transform(Customer $customer)
     {
-        return [
-            //
-        ];
+        return [];
     }
 }
