@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('customer_tables', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id_cs');
+            $table->varchar('nama_cs');
             $table->timestamps();
         });
     }
