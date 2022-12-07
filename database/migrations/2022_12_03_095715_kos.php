@@ -18,6 +18,7 @@ return new class extends Migration
             $table->variable_characters('nama_kos');
             $table->variable_characters('desk_kos');
             $table->variable_characters('tarif');
+            $table->integer('jml_kamar');
         });
     }
 
