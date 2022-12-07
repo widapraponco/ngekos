@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->variable_characters('nama_kos');
             $table->variable_characters('desk_kos');
+            $table->variable_characters('tarif');
         });
     }
 
