@@ -23,6 +23,7 @@ return new class extends Migration
             $table->variable_characters('alamat_kos');
             $table->image('gambar1');
             $table->image('gambar2');
+            $table->image('gambar3');
         });
     }
 
