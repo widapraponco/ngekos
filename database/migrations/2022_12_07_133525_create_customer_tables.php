@@ -20,7 +20,8 @@ return new class extends Migration
             $table->varchar('pass_cs', 10);
             $table->image('foto_cs');
             $table->varchar('alamat_cs', 20);
-            $table->char('notelp_cs', 12);
+            $table->char('notelp_cs', 14);
+            $table->varchar('gender', 20);
             $table->timestamps();
         });
     }
