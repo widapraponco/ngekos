@@ -18,12 +18,20 @@ $router->group(
             }
         );
 
-        $router->group(
-            [
-                'namespace' => 'V1',
-            ],
+        // $router->group(
+        //     [
+        //         'namespace' => 'V1',
+        //     ],
+        //     function () use ($router) {
+        //         require 'v1/v1.php';
+        //     }
+        // );
+
+        $router->group([
+            'prefix'        => 'api',
+        ],
             function () use ($router) {
-                require 'v1/v1.php';
+                require 'Pembayaran.php';
             }
         );
     }
