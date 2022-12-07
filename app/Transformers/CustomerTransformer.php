@@ -13,6 +13,8 @@ class CustomerTransformer extends TransformerAbstract
     
     public function transform(Customer $customer)
     {
-        return [];
+        $response = [
+        ];
+        return $response;
     }
 }
