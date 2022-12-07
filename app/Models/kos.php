@@ -10,6 +10,7 @@ class kos extends Model
     public $description = 'kos';
 
     public const PERMISSIONS = [
+        'create'        => 'kos create',
         
     ];
 }
