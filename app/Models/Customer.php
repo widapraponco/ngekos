@@ -9,5 +9,6 @@ class Customer extends Model
     public const PERMISSIONS = [
         'create'        => 'customer create',
         'read'          => 'customer read',
+        'update'        => 'customer update',
     ];
 }
