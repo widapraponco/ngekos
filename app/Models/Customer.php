@@ -10,5 +10,6 @@ class Customer extends Model
         'create'        => 'customer create',
         'read'          => 'customer read',
         'update'        => 'customer update',
+        'delete'        => 'customer delete',
     ];
 }
