@@ -25,6 +25,7 @@ return new class extends Migration
             $table->image('gambar2');
             $table->image('gambar3');
             $table->image('gambar4');
+            $table->variable_characters('tipe_waktu');
         });
     }
 
