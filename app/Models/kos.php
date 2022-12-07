@@ -8,4 +8,8 @@ class kos extends Model
 {
     protected $table = 'kos';
     public $description = 'kos';
+
+    public const PERMISSIONS = [
+        
+    ];
 }
