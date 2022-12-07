@@ -3,8 +3,10 @@
 namespace App\Transformers;
 
 use League\Fractal\TransformerAbstract;
+use App\Models\Pembayaran;
+use App\Transformers\BaseTransformer;
 
-class PembayaranTransformer extends TransformerAbstract
+class PembayaranTransformer extends BaseTransformer
 {
     /**
      * List of resources to automatically include
@@ -29,10 +31,24 @@ class PembayaranTransformer extends TransformerAbstract
      *
      * @return array
      */
-    public function transform()
+    public function transform(Pembayaran $pembayaran)
     {
-        return [
-            //
+        $response = [
+            'id'                   => self::forId($pembayaran),
+            'name'                 => $pembayaran->name,
+            'path'                 => $pembayaran->path,
+            'size'                 => $pembayaran->size,
+            'type'                 => $pembayaran->type,
+            'info'                 => $pembayaran->info,
+            'training_subject_id'  => $pembayaran->training_subject_id,
+            'training_subject'     => $pembayaran->training
         ];
+        return $response;
+    }
+
+    /** @return string */
+    public function getResourceKey(): string
+    {
+        return 'pembayaran';
     }
 }
