@@ -12,6 +12,6 @@ class kos extends Model
     public const PERMISSIONS = [
         'create'        => 'kos create',
         'read'          => 'kos read',
-        
+        'update'        => 'kos update',
     ];
 }
