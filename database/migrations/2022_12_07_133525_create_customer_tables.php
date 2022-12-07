@@ -22,6 +22,7 @@ return new class extends Migration
             $table->varchar('alamat_cs', 20);
             $table->char('notelp_cs', 14);
             $table->varchar('gender', 20);
+            $table->integer('nik');
             $table->timestamps();
         });
     }
