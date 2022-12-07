@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('stok_kamar');
             $table->variable_characters('alamat_kos');
             $table->image('gambar1');
+            $table->image('gambar2');
         });
     }
 
