@@ -40,8 +40,8 @@ class PembayaranTransformer extends BaseTransformer
             'kode_pembayaran'       => $pembayaran->kode_pembayaran,
             'type'                 => $pembayaran->type,
             'info'                 => $pembayaran->info,
-            'training_subject_id'  => $pembayaran->training_subject_id,
-            'training_subject'     => $pembayaran->training
+            // 'training_subject_id'  => $pembayaran->training_subject_id,
+            // 'training_subject'     => $pembayaran->training
         ];
         return $response;
     }
