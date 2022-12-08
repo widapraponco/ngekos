@@ -12,8 +12,8 @@ class Pembayaran extends Model
     public const PERMISSIONS = [
         'create'        => 'pembayaran create',
         'read'          => 'pembayaran read',
-        'update'        => 'pembayan update',
-        'delete'        => 'pembayan delete',
+        'update'        => 'pembayaran update',
+        'delete'        => 'pembayaran delete',
     ];
 
     protected $fillable = [
