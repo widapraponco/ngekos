@@ -18,21 +18,21 @@ $router->group(
             }
         );
 
-        // $router->group(
-        //     [
-        //         'namespace' => 'V1',
-        //     ],
-        //     function () use ($router) {
-        //         require 'v1/v1.php';
-        //     }
-        // );
-
-        $router->group([
-            'prefix'        => 'api',
-        ],
+        $router->group(
+            [
+                'namespace' => 'V1',
+            ],
             function () use ($router) {
-                require 'Pembayaran.php';
+                require 'v1/v1.php';
             }
         );
+
+        // $router->group([
+        //     'prefix'        => 'api',
+        // ],
+        //     function () use ($router) {
+        //         require 'Pembayaran.php';
+        //     }
+        // );
     }
 );
