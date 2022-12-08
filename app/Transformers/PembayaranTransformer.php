@@ -37,7 +37,7 @@ class PembayaranTransformer extends BaseTransformer
             'id'                    => self::forId($pembayaran),
             'total_pembayaran'      => $pembayaran->total_pembayaran,
             'status_pembayaran'     => $pembayaran->status_pembayaran,
-            'size'                 => $pembayaran->size,
+            'kode_pembayaran'       => $pembayaran->kode_pembayaran,
             'type'                 => $pembayaran->type,
             'info'                 => $pembayaran->info,
             'training_subject_id'  => $pembayaran->training_subject_id,
