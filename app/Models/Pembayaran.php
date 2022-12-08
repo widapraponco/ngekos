@@ -10,8 +10,8 @@ class Pembayaran extends Model
     public $description = 'Pembayaran Kos';
 
     public const PERMISSIONS = [
-        'create'        => 'pembayan create',
-        'read'          => 'pembayan read',
+        'create'        => 'pembayaran create',
+        'read'          => 'pembayaran read',
         'update'        => 'pembayan update',
         'delete'        => 'pembayan delete',
     ];
