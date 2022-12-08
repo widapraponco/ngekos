@@ -3,8 +3,10 @@
 namespace App\Transformers;
 
 use League\Fractal\TransformerAbstract;
+use App\Models\Admin;
+use App\Transformers\BaseTransformer;
 
-class AdminTransformer extends TransformerAbstract
+class AdminTransformer extends BaseTransformer
 {
     /**
      * List of resources to automatically include
@@ -29,10 +31,14 @@ class AdminTransformer extends TransformerAbstract
      *
      * @return array
      */
-    public function transform()
+    public function transform(Admin $admin)
     {
-        return [
-            //
+        $response = [
+            'id'                    => self::forId($admin),
+            'nama_admin'            => $pembayaran->total_pembayaran,
+            'email'                 => $pembayaran->status_pembayaran,
+            'password'              => $pembayaran->kode_pembayaran,
         ];
+        return $response;
     }
 }
