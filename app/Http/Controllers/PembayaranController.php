@@ -24,6 +24,8 @@ class PembayaranController extends Controller
     
 
     /**
+     * 
+     * 
      * @param  string  $id
      *
      * @return \Spatie\Fractal\Fractal
@@ -44,6 +46,63 @@ class PembayaranController extends Controller
     }
 
     /**
+     * 
+     * * @OA\Post(
+     *     path="/pembayaran",
+     *     summary="Pembayaran",
+     *     tags={"Authorization"},
+     *     security={{"passport" : {}}},
+     *     @OA\Parameter(
+     *         name="include",
+     *         in="query",
+     *         required=false,
+     *         @OA\Schema(
+     *             type="array",
+     *             @OA\Items(
+     *                 type="string",
+     *                 enum={"roles", "permissions"},
+     *             )
+     *         )
+     *     ),
+     *     @OA\RequestBody(
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 @OA\Property(
+     *                     description="User key",
+     *                     property="user_id",
+     *                     type="int",
+     *                 ),
+     *                 @OA\Property(
+     *                     description="Role key",
+     *                     property="role_id",
+     *                     type="int",
+     *                 ),
+     *                 example={
+     *                     "user_id" : "user-at-usercom",
+     *                     "role_id" : 1
+     *                 }
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK",
+     *         @OA\JsonContent(
+     *             type="array",
+     *             @OA\Items(ref="#/components/schemas/UserTransformer")
+     *         ),
+     *     ),
+     *     @OA\Response(
+     *         response="401",
+     *         description="Unauthorized",
+     *         @OA\JsonContent(
+     *             type="array",
+     *             @OA\Items(ref="#/components/schemas/Error")
+     *         ),
+     *     ),
+     * )
+     * 
      * @param  \Illuminate\Http\Request  $request
      *
      * @return \Illuminate\Http\JsonResponse
@@ -121,6 +180,46 @@ class PembayaranController extends Controller
     }
 
     /**
+     * * @OA\Delete(
+     *     path="/pembayaran",
+     *     summary="Pembayaran",
+     *     tags={"Authorization"},
+     *     security={{"passport" : {}}},
+     *     @OA\RequestBody(
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 @OA\Property(
+     *                     description="User key",
+     *                     property="user_id",
+     *                     type="int",
+     *                 ),
+     *                 @OA\Property(
+     *                     description="Role keyd",
+     *                     property="role_id",
+     *                     type="int",
+     *                 ),
+     *                 example={
+     *                     "user_id" : "user-at-usercom",
+     *                     "role_id" : 1
+     *                 }
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=204,
+     *         description="The resource was revoked successfully.",
+     *     ),
+     *     @OA\Response(
+     *         response="401",
+     *         description="Unauthorized",
+     *         @OA\JsonContent(
+     *             type="array",
+     *             @OA\Items(ref="#/components/schemas/Error")
+     *         ),
+     *     ),
+     * )
+     * 
      * @param  string  $id
      *
      * @return \Illuminate\Http\Response|\Laravel\Lumen\Http\ResponseFactory
