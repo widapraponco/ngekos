@@ -36,7 +36,7 @@ class PembayaranTransformer extends BaseTransformer
         $response = [
             'id'                    => self::forId($pembayaran),
             'total_pembayaran'      => $pembayaran->total_pembayaran,
-            'path'                 => $pembayaran->path,
+            'status_pembayaran'     => $pembayaran->status_pembayaran,
             'size'                 => $pembayaran->size,
             'type'                 => $pembayaran->type,
             'info'                 => $pembayaran->info,
