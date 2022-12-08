@@ -35,10 +35,16 @@ class AdminTransformer extends BaseTransformer
     {
         $response = [
             'id'                    => self::forId($admin),
-            'nama_admin'            => $pembayaran->total_pembayaran,
-            'email'                 => $pembayaran->status_pembayaran,
-            'password'              => $pembayaran->kode_pembayaran,
+            'nama_admin'            => $admin->nama_admin,
+            'email'                 => $admin->email,
+            'password'              => $admin->password,
         ];
         return $response;
+    }
+
+    /** @return string */
+    public function getResourceKey(): string
+    {
+        return 'admin';
     }
 }
