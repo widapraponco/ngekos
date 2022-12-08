@@ -26,12 +26,12 @@ class PembayaranController extends Controller
      * @param  string  $id
      *
      * @return \Spatie\Fractal\Fractal
-     * @api                {get} /auth/users/{id} Show user
-     * @apiName            show-user
-     * @apiGroup           User
+     * @api                {get} /pembayaran/{id} Show user
+     * @apiName            show-pembayaran
+     * @apiGroup           Pembayaran
      * @apiVersion         1.0.0
      * @apiPermission      Authenticated User
-     * @apiUse             UserResponse
+     * @apiUse             PembayaranResponse
      *
      */
     public function show(string $id)
