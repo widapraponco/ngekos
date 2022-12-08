@@ -27,21 +27,21 @@ $router->group(
                     '/{id}',
                     [
                         'as' => 'show',
-                        'uses' => 'UserController@show',
+                        'uses' => 'PembayaranController@show',
                     ]
                 );
                 $router->put(
                     '/{id}',
                     [
                         'as' => 'update',
-                        'uses' => 'UserController@update',
+                        'uses' => 'PembayaranController@update',
                     ]
                 );
                 $router->delete(
                     '/{id}',
                     [
                         'as' => 'destroy',
-                        'uses' => 'UserController@destroy',
+                        'uses' => 'PembayaranController@destroy',
                     ]
                 );
             }
