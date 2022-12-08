@@ -10,15 +10,15 @@ class Pembayaran extends Model
     public $description = 'Pembayaran Kos';
 
     public const PERMISSIONS = [
-        'create'        => 'pembayan create',
-        'read'          => 'pembayan read',
-        'update'        => 'pembayan update',
-        'delete'        => 'pembayan delete',
+        'create'        => 'pembayaran create',
+        'read'          => 'pembayaran read',
+        'update'        => 'pembayaran update',
+        'delete'        => 'pembayaran delete',
     ];
 
     protected $fillable = [
         'total_pembayaran',
-        'status_pembayan',
-        'kode_pembayan',
+        'status_pembayaran',
+        'kode_pembayaran',
     ];   
 }
