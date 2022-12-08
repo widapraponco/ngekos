@@ -12,7 +12,6 @@ class Pembayaran extends Model
     public const PERMISSIONS = [
         'create'        => 'pembayan create',
         'read'          => 'pembayan read',
-        'update'        => 'pembayan update',
         'delete'        => 'pembayan delete',
     ];
 
