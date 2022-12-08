@@ -85,12 +85,12 @@ class PembayaranController extends Controller
      *
      * @return \Spatie\Fractal\Fractal
      * @throws \Illuminate\Validation\ValidationException
-     * @api                {put} /auth/users/ Update user
-     * @apiName            update-user
-     * @apiGroup           User
+     * @api                {put} /pembayaran/ Update pembayaran
+     * @apiName            update-pembayaran
+     * @apiGroup           Pembayaran
      * @apiVersion         1.0.0
      * @apiPermission      Authenticated User
-     * @apiUse             UserResponse
+     * @apiUse             PembayaranResponse
      * @apiParam {String} first_name
      * @apiParam {String} last_name
      * @apiParam {String} email
