@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 namespace App\Http\Controllers\V1\Backend\Auth\User;
-
+ 
 use App\Http\Controllers\Controller;
 use App\Models\Auth\User\User;
 use App\Transformers\Auth\UserTransformer;
