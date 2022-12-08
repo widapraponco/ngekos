@@ -17,7 +17,7 @@ class PembayaranController extends Controller
         $this->middleware('permission:'.$pembayaran['create'], ['only' => 'store']);
         $this->middleware('permission:'.$pembayaran['show'], ['only' => 'show']);
         $this->middleware('permission:'.$pembayaran['update'], ['only' => 'update']);
-       
+        $this->middleware('permission:'.$pembayaran['destroy'], ['only' => 'destroy']);
     }
 
     /**
