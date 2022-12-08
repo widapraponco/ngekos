@@ -47,12 +47,12 @@ class PembayaranController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      * @throws \Illuminate\Validation\ValidationException
-     * @api                {post} /auth/users Store user
-     * @apiName            store-user
-     * @apiGroup           User
+     * @api                {post} /pembayaran Store pembayaran
+     * @apiName            store-pembayaran
+     * @apiGroup           Pembayaran
      * @apiVersion         1.0.0
      * @apiPermission      Authenticated User
-     * @apiUse             UserCreatedResponse
+     * @apiUse             PembayaranCreatedResponse
      * @apiParam {String} first_name (required)
      * @apiParam {String} last_name (required)
      * @apiParam {String} email (required)
