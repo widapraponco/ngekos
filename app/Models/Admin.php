@@ -39,10 +39,8 @@ class Admin extends Model
  */
 {
     protected $fillable = [
-        'user_id',
-        'provider',
-        'provider_id',
-        'token',
-        'avatar',
+        'nama_admin',
+        'email',
+        'password',
     ];
 }
