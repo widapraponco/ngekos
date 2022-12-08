@@ -123,9 +123,9 @@ class PembayaranController extends Controller
      * @param  string  $id
      *
      * @return \Illuminate\Http\Response|\Laravel\Lumen\Http\ResponseFactory
-     * @api                {delete} /auth/users/{id} Destroy user
-     * @apiName            destroy-user
-     * @apiGroup           User
+     * @api                {delete} /pembayaran/{id} Destroy pembayaran
+     * @apiName            destroy-pembayaran
+     * @apiGroup           pembayaran
      * @apiVersion         1.0.0
      * @apiPermission      Authenticated User
      * @apiUse             NoContentResponse
