@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('customer', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nama_cs');
-            $table->string('email_cs');
-            $table->string('pass_cs');
+            $table->string('nama_cs', 20);
+            $table->string('email_cs', 20);
+            $table->string('pass_cs', 20);
             $table->string('foto_cs');
-            $table->string('alamat_cs');
-            $table->string('notip_cs');
+            $table->string('alamat_cs', 20);
+            $table->string('notip_cs', 14);
             $table->enum('type', ['male', 'female']);
             $table->string('nik');
         });
