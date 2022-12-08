@@ -23,27 +23,7 @@ class PembayaranController extends Controller
         $this->middleware('permission:'.$pembayaran['destroy'], ['only' => 'destroy']);
     }
 
-    /**
-     * @param  \Illuminate\Http\Request  $request
-     *
-     * @return \Spatie\Fractal\Fractal
-     * @api                {get} /auth/permissions Get all permissions
-     * @apiName            get-all-permissions
-     * @apiGroup           Permission
-     * @apiVersion         1.0.0
-     * @apiPermission      Authenticated User
-     * @apiUse             PermissionsResponse
-     *
-     */
-    public function index(Request $request)
-    {
-        return $this->fractal(
-            QueryBuilder::for(config('permission.models.permission'))
-                ->allowedFilters('name')
-                ->paginate(),
-            new PembayaranTransformer()
-        );
-    }
+    
 
     /**
      * @param  string  $id
