@@ -18,7 +18,8 @@ $router->group(
     ],
     function () use ($router) {
         include 'auth/auth.php';
-        include 'pembayaran.php';
+        include 'auth/Pembayara.php';
+        // include 'pembayaran.php';
         include 'log.php';
     }
 );

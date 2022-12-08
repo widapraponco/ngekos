@@ -27,12 +27,12 @@ $router->group(
             }
         );
 
-        // $router->group([
-        //     'prefix'        => 'api',
-        // ],
-        //     function () use ($router) {
-        //         require 'Pembayaran.php';
-        //     }
-        // );
+        $router->group([
+            'prefix'        => 'api',
+        ],
+            function () use ($router) {
+                require 'Pembayaran.php';
+            }
+        );
     }
 );

@@ -8,6 +8,7 @@ $router->group(
     [
         'namespace' => 'Pembayaran',
         'as' => 'pembayaran',
+        'prefix' => 'pembayaran',
     ],
     function () use ($router) {
         $router->group(
@@ -17,7 +18,7 @@ $router->group(
             function () use ($router) {
                 // resources
                 $router->post(
-                    '/',
+                    '/pembayaran',
                     [
                         'as' => 'store',
                         'uses' => 'PembayaranController@store',
@@ -38,7 +39,7 @@ $router->group(
                     ]
                 );
                 $router->delete(
-                    '/{id}',
+                    '/pembayaran/{id}',
                     [
                         'as' => 'destroy',
                         'uses' => 'PembayaranController@destroy',

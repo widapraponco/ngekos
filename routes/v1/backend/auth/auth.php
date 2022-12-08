@@ -14,6 +14,6 @@ $router->group(
         include 'role.php';
         include 'permission.php';
         include 'authorization.php';
-        include 'pembayaran.php';
+        // include 'pembayaran.php';
     }
 );

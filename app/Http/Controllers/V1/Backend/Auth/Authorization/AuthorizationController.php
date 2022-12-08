@@ -21,7 +21,6 @@ class AuthorizationController extends Controller
     }
 
     /**
-     *
      * @OA\Post(
      *     path="/auth/authorizations/assign-role-to-user",
      *     summary="Assign role to user",
