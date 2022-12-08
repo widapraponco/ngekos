@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
-    protected array $permission = Customer::PERMISSIONS;
+    // protected array $permission = Customer::PERMISSIONS;
     
 }
