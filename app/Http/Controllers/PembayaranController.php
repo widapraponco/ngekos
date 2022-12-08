@@ -157,7 +157,7 @@ class PembayaranController extends Controller
             ->execute($id);
 
         if (app('auth')->id() == $user->getKey()) {
-            return response(['' => 'You cannot delete your self.'], 403);
+            return response(['message' => 'You cannot delete your self.'], 403);
         }
 
         $user->delete();
