@@ -87,7 +87,7 @@ class PembayaranController extends Controller
                 'first_name' => 'required|string',
                 'last_name' => 'required|string',
                 'email' => 'required|email|unique:users,email',
-                'password' => 'required',
+                
             ]
         );
 
