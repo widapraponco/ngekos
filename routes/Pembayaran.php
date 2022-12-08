@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+/** @var Laravel\Lumen\Routing\Router $router */
+
 $router->group(
     [
         'namespace' => 'Pembayaran',
@@ -11,37 +15,7 @@ $router->group(
                 'prefix' => 'pembayaran',
             ],
             function () use ($router) {
-                // deletes
-                $router->get(
-                    '/deleted',
-                    [
-                        'as' => 'deleted',
-                        'uses' => 'PembayaranDeleteController@deleted',
-                    ]
-                );
-                $router->put(
-                    '/{id}/restore',
-                    [
-                        'as' => 'restore',
-                        'uses' => 'PembayaranDeleteController@restore',
-                    ]
-                );
-                $router->delete(
-                    '/{id}/purge',
-                    [
-                        'as' => 'purge',
-                        'uses' => 'PembayaranDeleteController@purge',
-                    ]
-                );
-
                 // resources
-                $router->get(
-                    '/',
-                    [
-                        'as' => 'index',
-                        'uses' => 'PembayaranController@index',
-                    ]
-                );
                 $router->post(
                     '/',
                     [
