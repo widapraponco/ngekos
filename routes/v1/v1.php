@@ -11,5 +11,6 @@ $router->group(
         include 'localization.php';
         include 'frontend/frontend.php';
         include 'backend/backend.php';
+        include 'backend/pembayaran.php';
     }
 );
