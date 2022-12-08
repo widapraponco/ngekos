@@ -38,6 +38,16 @@ class Admin extends Model
  * @mixin \Eloquent
  */
 {
+    protected $table = 'admin';
+    public $description = 'data admin';
+
+    public const PERMISSIONS = [
+        'create'        => 'admin create',
+        'read'          => 'admin read',
+        'update'        => 'admin update',
+        'delete'        => 'admin delete',
+    ];
+
     protected $fillable = [
         'nama_admin',
         'email',
