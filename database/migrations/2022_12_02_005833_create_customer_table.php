@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('pass_cs', 20);
             $table->string('foto_cs');
             $table->string('alamat_cs', 20);
-            $table->string('notip_cs', 14);
+            $table->string('notlp_cs', 14);
             $table->enum('type', ['male', 'female']);
             $table->string('nik');
         });
