@@ -34,8 +34,8 @@ class PembayaranTransformer extends BaseTransformer
     public function transform(Pembayaran $pembayaran)
     {
         $response = [
-            'id'                   => self::forId($pembayaran),
-            'name'                 => $pembayaran->name,
+            'id'                    => self::forId($pembayaran),
+            'total_pembayaran'      => $pembayaran->total_pembayaran,
             'path'                 => $pembayaran->path,
             'size'                 => $pembayaran->size,
             'type'                 => $pembayaran->type,
