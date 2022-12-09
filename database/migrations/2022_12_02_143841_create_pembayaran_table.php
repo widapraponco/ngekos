@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('total_pembayaran');
             $table->string('status_pembayaran');
-            $table->string('kode_pembayan');
+            $table->string('kode_pembayaran');
         });
     }
 
