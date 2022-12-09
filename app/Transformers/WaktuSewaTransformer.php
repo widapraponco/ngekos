@@ -4,7 +4,7 @@ namespace App\Transformers;
 
 use League\Fractal\TransformerAbstract;
 
-class waktu_sewa extends TransformerAbstract
+class WaktuSewaTransformer extends TransformerAbstract
 {
     /**
      * List of resources to automatically include
