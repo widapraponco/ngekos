@@ -18,7 +18,7 @@ class CustomerController extends Controller
         $permissions = Customer::PERMISSIONS;
 
         $this->middleware('permission:'.$permissions['index'], ['only' => 'index']);
-        $this->middleware('permission:'.$permissions['create'], ['only' => 'store']);
+        $this->middleware('permission:'.$permissions['create'], ['only' => 'create']);
         $this->middleware('permission:'.$permissions['show'], ['only' => 'show']);
         $this->middleware('permission:'.$permissions['update'], ['only' => 'update']);
         $this->middleware('permission:'.$permissions['destroy'], ['only' => 'destroy']);
@@ -90,7 +90,7 @@ class CustomerController extends Controller
      *         description="OK",
      *         @OA\JsonContent(
      *             type="array",
-     *             @OA\Items(ref="#/components/schemas/UserTransformer")
+     *             @OA\Items(ref="#/components/schemas/CustomerTransformer")
      *         ),
      *     ),
      *     @OA\Response(
@@ -107,12 +107,12 @@ class CustomerController extends Controller
      *
      * @return \Spatie\Fractal\Fractal
      * @throws \Illuminate\Validation\ValidationException
-     * @api                {post} /pembayaran/add-new-customer Add new customer
+     * @api                {post} /customer/add-new-customer Add new customer
      * @apiName            add-customer
      * @apiGroup           Customer
      * @apiVersion         1.0.0
      * @apiPermission      Authenticated User
-     * @apiUse             UserResponse
+     * @apiUse             CustomerResponse
      * @apiParam {String} user_id User hashed id
      * @apiParam {String} role_id Role hashed id
      *
