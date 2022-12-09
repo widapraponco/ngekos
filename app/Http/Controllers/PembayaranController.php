@@ -46,11 +46,10 @@ class PembayaranController extends Controller
     }
 
     /**
-     * 
-     * * @OA\Post(
-     *     path="/pembayaran",
-     *     summary="Pembayaran",
-     *     tags={"Authorization"},
+     * @OA\Post(
+     *     path="/pembayaran/add-pembayaran",
+     *     summary="Add Pembayaran",
+     *     tags={"Pembayaran"},
      *     security={{"passport" : {}}},
      *     @OA\Parameter(
      *         name="include",
@@ -88,10 +87,6 @@ class PembayaranController extends Controller
      *     @OA\Response(
      *         response=200,
      *         description="OK",
-     *         @OA\JsonContent(
-     *             type="array",
-     *             @OA\Items(ref="#/components/schemas/UserTransformer")
-     *         ),
      *     ),
      *     @OA\Response(
      *         response="401",
@@ -107,8 +102,8 @@ class PembayaranController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      * @throws \Illuminate\Validation\ValidationException
-     * @api                {post} /pembayaran Store pembayaran
-     * @apiName            store-pembayaran
+     * @api                {post} /pembayaran/add-pembayaran Add pembayaran
+     * @apiName            add-pembayaran
      * @apiGroup           Pembayaran
      * @apiVersion         1.0.0
      * @apiPermission      Authenticated User
@@ -181,9 +176,9 @@ class PembayaranController extends Controller
 
     /**
      * * @OA\Delete(
-     *     path="/pembayaran",
-     *     summary="Pembayaran",
-     *     tags={"Authorization"},
+     *     path="/pembayaran/destroy{id}",
+     *     summary="Destroy Pembayaran",
+     *     tags={"Pembayaran"},
      *     security={{"passport" : {}}},
      *     @OA\RequestBody(
      *         @OA\MediaType(
@@ -223,7 +218,7 @@ class PembayaranController extends Controller
      * @param  string  $id
      *
      * @return \Illuminate\Http\Response|\Laravel\Lumen\Http\ResponseFactory
-     * @api                {delete} /pembayaran/{id} Destroy pembayaran
+     * @api                {delete} /pembayaran/destroy-pembayaran{id} Destroy pembayaran
      * @apiName            destroy-pembayaran
      * @apiGroup           Pembayaran
      * @apiVersion         1.0.0
