@@ -26,13 +26,5 @@ $router->group(
                 require 'v1/v1.php';
             }
         );
-
-        $router->group([
-            'prefix'        => 'api',
-        ],
-            function () use ($router) {
-                require 'Pembayaran.php';
-            }
-        );
     }
 );
