@@ -7,6 +7,7 @@ use App\Models\Pembayaran;
 use App\Transformers\PembayaranTransformer;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
+use Illuminate\Validation\Rule;
 
 class PembayaranController extends Controller
 {
@@ -20,38 +21,20 @@ class PembayaranController extends Controller
         $this->middleware('permission:'.$pembayaran['destroy'], ['only' => 'destroy']);
     }
 
-    /**
-     * @param  \Illuminate\Http\Request  $request
-     *
-     * @return \Spatie\Fractal\Fractal
-     * @api                {get} /auth/permissions Get all permissions
-     * @apiName            get-all-permissions
-     * @apiGroup           Permission
-     * @apiVersion         1.0.0
-     * @apiPermission      Authenticated User
-     * @apiUse             PermissionsResponse
-     *
-     */
-    public function index(Request $request)
-    {
-        return $this->fractal(
-            QueryBuilder::for(config('permission.models.permission'))
-                ->allowedFilters('name')
-                ->paginate(),
-            new PembayaranTransformer()
-        );
-    }
+    
 
     /**
+     * 
+     * 
      * @param  string  $id
      *
      * @return \Spatie\Fractal\Fractal
-     * @api                {get} /auth/users/{id} Show user
-     * @apiName            show-user
-     * @apiGroup           User
+     * @api                {get} /pembayaran/{id} Show user
+     * @apiName            show-pembayaran
+     * @apiGroup           Pembayaran
      * @apiVersion         1.0.0
      * @apiPermission      Authenticated User
-     * @apiUse             UserResponse
+     * @apiUse             PembayaranResponse
      *
      */
     public function show(string $id)
@@ -63,16 +46,73 @@ class PembayaranController extends Controller
     }
 
     /**
+     * 
+     * * @OA\Post(
+     *     path="/pembayaran",
+     *     summary="Pembayaran",
+     *     tags={"Authorization"},
+     *     security={{"passport" : {}}},
+     *     @OA\Parameter(
+     *         name="include",
+     *         in="query",
+     *         required=false,
+     *         @OA\Schema(
+     *             type="array",
+     *             @OA\Items(
+     *                 type="string",
+     *                 enum={"roles", "permissions"},
+     *             )
+     *         )
+     *     ),
+     *     @OA\RequestBody(
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 @OA\Property(
+     *                     description="User key",
+     *                     property="user_id",
+     *                     type="int",
+     *                 ),
+     *                 @OA\Property(
+     *                     description="Role key",
+     *                     property="role_id",
+     *                     type="int",
+     *                 ),
+     *                 example={
+     *                     "user_id" : "user-at-usercom",
+     *                     "role_id" : 1
+     *                 }
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="OK",
+     *         @OA\JsonContent(
+     *             type="array",
+     *             @OA\Items(ref="#/components/schemas/UserTransformer")
+     *         ),
+     *     ),
+     *     @OA\Response(
+     *         response="401",
+     *         description="Unauthorized",
+     *         @OA\JsonContent(
+     *             type="array",
+     *             @OA\Items(ref="#/components/schemas/Error")
+     *         ),
+     *     ),
+     * )
+     * 
      * @param  \Illuminate\Http\Request  $request
      *
      * @return \Illuminate\Http\JsonResponse
      * @throws \Illuminate\Validation\ValidationException
-     * @api                {post} /auth/users Store user
-     * @apiName            store-user
-     * @apiGroup           User
+     * @api                {post} /pembayaran Store pembayaran
+     * @apiName            store-pembayaran
+     * @apiGroup           Pembayaran
      * @apiVersion         1.0.0
      * @apiPermission      Authenticated User
-     * @apiUse             UserCreatedResponse
+     * @apiUse             PembayaranCreatedResponse
      * @apiParam {String} first_name (required)
      * @apiParam {String} last_name (required)
      * @apiParam {String} email (required)
@@ -105,12 +145,12 @@ class PembayaranController extends Controller
      *
      * @return \Spatie\Fractal\Fractal
      * @throws \Illuminate\Validation\ValidationException
-     * @api                {put} /auth/users/ Update user
-     * @apiName            update-user
-     * @apiGroup           User
+     * @api                {put} /pembayaran/ Update pembayaran
+     * @apiName            update-pembayaran
+     * @apiGroup           Pembayaran
      * @apiVersion         1.0.0
      * @apiPermission      Authenticated User
-     * @apiUse             UserResponse
+     * @apiUse             PembayaranResponse
      * @apiParam {String} first_name
      * @apiParam {String} last_name
      * @apiParam {String} email
@@ -140,12 +180,52 @@ class PembayaranController extends Controller
     }
 
     /**
+     * * @OA\Delete(
+     *     path="/pembayaran",
+     *     summary="Pembayaran",
+     *     tags={"Authorization"},
+     *     security={{"passport" : {}}},
+     *     @OA\RequestBody(
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 @OA\Property(
+     *                     description="User key",
+     *                     property="user_id",
+     *                     type="int",
+     *                 ),
+     *                 @OA\Property(
+     *                     description="Role keyd",
+     *                     property="role_id",
+     *                     type="int",
+     *                 ),
+     *                 example={
+     *                     "user_id" : "user-at-usercom",
+     *                     "role_id" : 1
+     *                 }
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=204,
+     *         description="The resource was revoked successfully.",
+     *     ),
+     *     @OA\Response(
+     *         response="401",
+     *         description="Unauthorized",
+     *         @OA\JsonContent(
+     *             type="array",
+     *             @OA\Items(ref="#/components/schemas/Error")
+     *         ),
+     *     ),
+     * )
+     * 
      * @param  string  $id
      *
      * @return \Illuminate\Http\Response|\Laravel\Lumen\Http\ResponseFactory
-     * @api                {delete} /auth/users/{id} Destroy user
-     * @apiName            destroy-user
-     * @apiGroup           User
+     * @api                {delete} /pembayaran/{id} Destroy pembayaran
+     * @apiName            destroy-pembayaran
+     * @apiGroup           Pembayaran
      * @apiVersion         1.0.0
      * @apiPermission      Authenticated User
      * @apiUse             NoContentResponse
