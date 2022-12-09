@@ -46,7 +46,6 @@ class CustomerController extends Controller
     }
 
     /**
-     *
      * @OA\Post(
      *     path="/customer/add-new-customer",
      *     summary="Add new customer",
@@ -88,10 +87,6 @@ class CustomerController extends Controller
      *     @OA\Response(
      *         response=200,
      *         description="OK",
-     *         @OA\JsonContent(
-     *             type="array",
-     *             @OA\Items(ref="#/components/schemas/CustomerTransformer")
-     *         ),
      *     ),
      *     @OA\Response(
      *         response="401",
