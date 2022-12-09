@@ -18,6 +18,7 @@ $router->group(
     ],
     function () use ($router) {
         include 'auth/auth.php';
+        include 'customer/customer.php';
         include 'log.php';
     }
 );
