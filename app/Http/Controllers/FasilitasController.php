@@ -123,10 +123,10 @@ class FasilitasController extends Controller
         $attributes = $this->validate(
             $request,
             [
-                'first_name' => 'required|string',
-                'last_name' => 'required|string',
-                'email' => 'required|email|unique:users,email',
-                'password' => 'required',
+                'nama_fasilitas' => 'required|string',
+                'deskripsi' => 'required|string',
+                'harga' => 'required|email|unique:users,email',
+        
             ]
         );
 

@@ -16,7 +16,6 @@ class Fasilitas extends Model
         'delete'        => 'fasilitas delete',
     ];
 
-    
     protected $fillable = [
         'nama_fasilitas',
         'deskripsi',
