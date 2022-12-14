@@ -16,8 +16,6 @@ use App\Transformers\BaseTransformer;
 class FasilitasTransformer extends BaseTransformer
 {
     protected array $availableIncludes = [
-        'roles',
-        'permissions',
     ];
 
     /**
