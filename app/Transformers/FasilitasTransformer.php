@@ -9,6 +9,7 @@
 
 namespace App\Transformers;
 
+use League\Fractal\TransformerAbstract;
 use App\Models\Fasilitas;
 use App\Transformers\BaseTransformer;
 
