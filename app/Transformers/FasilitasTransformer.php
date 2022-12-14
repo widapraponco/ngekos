@@ -28,7 +28,7 @@ class FasilitasTransformer extends BaseTransformer
     public function transform(Fasilitas $table)
     {
         $response = [
-            // 'id' => self::forId($table),
+            'id' => self::forId($table),
             'nama_fasilitas' => $table->nama_fasilitas,
             'deskripsi' => $table->deskripsi,
             'harga' => $table->harga,
