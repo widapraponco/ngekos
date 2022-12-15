@@ -24,6 +24,7 @@ class AdminController extends Controller
     public function show(string $id)
     {
         return $this->fractal(
+            app(FindUserByRouteKeyAction::class)->execute($id, throw404: true),
         );       
     }
 
