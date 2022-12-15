@@ -90,7 +90,7 @@ class FasilitasController extends Controller
             [
                 'nama_fasilitas' => 'required|string',
                 'deskripsi' => 'required|string',
-                'harga' => 'required',
+                'harga' => 'required|integer',
               
             ]
         );
