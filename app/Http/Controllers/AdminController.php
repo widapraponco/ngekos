@@ -25,6 +25,7 @@ class AdminController extends Controller
     {
         return $this->fractal(
             app(FindUserByRouteKeyAction::class)->execute($id, throw404: true),
+            new AdminTransformer()
         );       
     }
 
