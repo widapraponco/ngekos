@@ -24,6 +24,28 @@ class AdminController extends Controller
 
     }
 
+    /**
+     * @param  \Illuminate\Http\Request  $request
+     *
+     * @return \Spatie\Fractal\Fractal
+     * @api                {get} /auth/admin Get all admin
+     * @apiName            get-all-users
+     * @apiGroup           User
+     * @apiVersion         1.0.0
+     * @apiPermission      Authenticated User
+     * @apiUse             UsersResponse
+     *
+     */
+    public function index()
+    {
+        return $this->fractal(
+            QueryBuilder::for(Admin::class)
+                ->allowedFilters(['nama_admin', 'email', 'password'])
+                ->paginate(),
+            new AdminTransformer()
+        );
+    }
+
     public function show(string $id)
     {
         return $this->fractal(
