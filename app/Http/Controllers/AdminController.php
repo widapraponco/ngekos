@@ -13,6 +13,8 @@ class AdminController extends Controller
     {
         $permissions = Fasilitas::PERMISSIONS;
         
+        $this->middleware('permission:'.$permissions['index'], ['only' => 'index']);
+
     }
 
 }
