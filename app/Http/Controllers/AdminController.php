@@ -14,7 +14,7 @@ class AdminController extends Controller
     //
     public function __construct()
     {
-        $permissions = Fasilitas::PERMISSIONS;
+        $permissions = Admin::PERMISSIONS;
         
         $this->middleware('permission:'.$permissions['index'], ['only' => 'index']);
         $this->middleware('permission:'.$permissions['create'], ['only' => 'store']);
