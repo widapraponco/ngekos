@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
-use Illuminate\Http\Request;
 use App\Transformers\AdminTransformer;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
