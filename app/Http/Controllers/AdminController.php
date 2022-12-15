@@ -9,4 +9,9 @@ use App\Transformers\AdminTransformer;
 class AdminController extends Controller
 {
     //
+    public function __construct()
+    {
+        
+    }
+
 }
