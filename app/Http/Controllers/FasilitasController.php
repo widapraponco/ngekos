@@ -128,7 +128,7 @@ class FasilitasController extends Controller
             [
                 'nama_fasilitas' => 'required|string',
                 'deskripsi' => 'required|string',
-                'harga' => 'required|email|unique:users,email',
+                'harga' => 'required',
         
             ]
         );
