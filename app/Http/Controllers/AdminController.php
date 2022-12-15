@@ -15,6 +15,7 @@ class AdminController extends Controller
         
         $this->middleware('permission:'.$permissions['index'], ['only' => 'index']);
         $this->middleware('permission:'.$permissions['create'], ['only' => 'store']);
+        $this->middleware('permission:'.$permissions['show'], ['only' => 'show']);
 
     }
 
