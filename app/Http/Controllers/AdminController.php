@@ -7,6 +7,7 @@ use App\Models\Admin;
 use App\Transformers\AdminTransformer;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
+use Illuminate\Validation\Rule;
 
 class AdminController extends Controller
 {
