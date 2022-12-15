@@ -6,7 +6,6 @@ use App\Models\PemilikKos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
-use App\Models\PemilikKos;
 use App\Transformers\PemilikKosTransformer;
 use Spatie\QueryBuilder\QueryBuilder;
 use Illuminate\Validation\Rule;
@@ -39,10 +38,10 @@ class PemilikKosController extends Controller
     public function index()
     {
         return $this->fractal(
-            QueryBuilder::for(Customer::class)
-                ->allowedFilters(['nama_cs', 'email_cs', 'pass_cs'])
+            QueryBuilder::for(PemilikKos::class)
+                ->allowedFilters(['nama_pk', 'email_pk', 'pass_pk'])
                 ->paginate(),
-            new PemilikKosTransformers()
+            new PemilikKosTransformer()
         );
     }
 
@@ -108,7 +107,7 @@ class PemilikKosController extends Controller
      * @apiGroup           Customer
      * @apiVersion         1.0.0
      * @apiPermission      Authenticated User
-     * @apiUse             CustomerResponse
+     * @apiUse             PemilikKosResponse
      * @apiParam {String} user_id User hashed id
      * @apiParam {String} role_id Role hashed id
      *
@@ -118,9 +117,9 @@ class PemilikKosController extends Controller
         $attributes = $this->validate(
             $request,
             [
-                'nama_cs' => 'required|string',
-                'email_cs' => 'required|string',
-                'pass_cs' => 'required|string',
+                'nama_pk' => 'required|string',
+                'email_pk' => 'required|string',
+                'pass_pk' => 'required|string',
             ]
         );
 
