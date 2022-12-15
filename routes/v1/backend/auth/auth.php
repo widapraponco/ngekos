@@ -11,6 +11,7 @@ $router->group(
     ],
     function () use ($router) {
         include 'user.php';
+        include 'admin.php';
         include 'role.php';
         include 'permission.php';
         include 'authorization.php';
