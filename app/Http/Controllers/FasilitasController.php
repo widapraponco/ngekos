@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Fasilitas;
 use App\Transformers\FasilitasTransformer;
 use Illuminate\Http\Request;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class FasilitasController extends Controller
 
