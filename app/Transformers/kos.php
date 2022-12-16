@@ -42,8 +42,8 @@ class KosTransformer extends TransformerAbstract
      */
     public function transform()
     {
-        return [
-            //
+        $response = [
+            
         ];
     }
 }
