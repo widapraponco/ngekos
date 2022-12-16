@@ -58,5 +58,7 @@ $router->group(
                 'uses' => 'AuthorizationController@revokePermissionFromRole',
             ]
         );
+        
+        $router->get('pemesanan',  ['uses' => 'ControllerPemesanan@index']);
     }
 );
