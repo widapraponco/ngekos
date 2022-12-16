@@ -145,4 +145,4 @@ class Controller extends BaseController
             ->withResourceName($transformer->getResourceKey())
             ->addMeta(['include' => $transformer->getAvailableIncludes()]);
     }
-}
+} 
