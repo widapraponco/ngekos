@@ -26,11 +26,5 @@ $router->group(
                 require 'v1/v1.php';
             }
         );
-        $router->group(
-            [
-                'namespace' => 'admin'
-            ], 
-            function () use ($router) {
-        });
     }
 );
