@@ -36,6 +36,8 @@ class KosTransformer extends TransformerAbstract
     /**
      * A Fractal transformer.
      *
+     * @param  \App\Models\Auth\User\Kos  $table
+     *
      * @return array
      */
     public function transform()
