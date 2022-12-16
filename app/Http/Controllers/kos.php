@@ -14,6 +14,7 @@ class KosController extends Controller
         $permissions = Kos::PERMISSIONS;
 
         $this->middleware('permission:'.$permissions['index'], ['only' => 'index']);
+        $this->middleware('permission:'.$permissions['create'], ['only' => 'store']);
         
     }
 }
