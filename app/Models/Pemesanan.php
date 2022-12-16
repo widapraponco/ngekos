@@ -15,6 +15,6 @@ class Pemesanan extends Model
     protected $fillable = [
         'tanggal_pemesanan',
         'status_pemesanan',
-    ];
+    ]; beububuebe
 }
  
