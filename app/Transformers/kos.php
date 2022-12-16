@@ -10,8 +10,10 @@
 namespace App\Transformers;
 
 use League\Fractal\TransformerAbstract;
+use App\Models\Kos;
+use App\Transformers\BaseTransformer;
 
-class kos extends TransformerAbstract
+class KosTransformer extends TransformerAbstract
 {
     /**
      * List of resources to automatically include
