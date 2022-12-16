@@ -57,4 +57,4 @@ class ControllerPemesanan extends Controller
         Pemesanan::where('id', $id)->delete();
         return response()->json("Data petugas berhasil dihapus");
     }
-}  ssdsdsds
+}  
