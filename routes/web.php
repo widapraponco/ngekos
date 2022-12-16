@@ -28,3 +28,10 @@ $router->group(
         );
     }
 );
+
+$router->group([], function () use ($router) {
+    $router->get('pemesanan',  ['uses' => 'ControllerPemesanan@index']);
+    $router->post('pemesanan',  ['uses' => 'ControllerPemesanan@create']);
+    $router->put('pemesanan/{id}',  ['uses' => 'ControllerPemesanan@update']);
+    $router->delete('pemesanan/{id}',  ['uses' => 'ControllerPemesanan@destroy']);
+});
