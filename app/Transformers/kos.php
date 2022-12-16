@@ -48,5 +48,21 @@ class KosTransformer extends TransformerAbstract
 
         
         // return $this->addTimesHumanReadable($table, $response);
+
+    }
+     // public function includeRoles(Kos $table)
+    // {
+    //     return $this->collection($table->roles, new RoleTransformer());
+    // }
+
+    // public function includePermissions(Kos $table)
+    // {
+    //     return $this->collection($table->permissions, new PermissionTransformer());
+    // }
+
+    /** @return string */
+    public function getResourceKey(): string
+    {
+        return 'Kos';
     }
 }
