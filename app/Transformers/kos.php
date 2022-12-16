@@ -45,7 +45,6 @@ class KosTransformer extends TransformerAbstract
         $response = [
             
         ];
-
         
         // return $this->addTimesHumanReadable($table, $response);
 
