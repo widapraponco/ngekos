@@ -43,7 +43,7 @@ class ControllerPemesanan extends Controller
     {
         //
         Pemesanan::where('id', $id)->update($request->all());
-        return response()->json("Data petugas berhasil diupdate");
+        return response()->json("Data pemesanan berhasil diupdate");
     }
 
     /**
@@ -55,6 +55,6 @@ class ControllerPemesanan extends Controller
     public function destroy($id)
     {
         Pemesanan::where('id', $id)->delete();
-        return response()->json("Data petugas berhasil dihapus");
+        return response()->json("Data pemesanan berhasil dihapus");
     }
 }  
